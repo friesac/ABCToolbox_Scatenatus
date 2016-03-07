@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -x
 path_to_results=$1
 population=$2
