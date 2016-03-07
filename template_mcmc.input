@@ -1,0 +1,47 @@
+//Inputfile for the program ABCsampler
+//-----------------------------------------------------------------------
+samplerType MCMC
+writeHeader 1
+
+estName KLDR_1.est
+simInputName KLDR_1.par
+obsName Scate_17micro_KLDR.obs
+outName KLDR_1_mcmc_output
+nbSims 20000
+simulationProgram simcoal2
+simDataName KLDR_1-temp_0.arp
+sumStatProgram arlsumstat
+simParam SIMINPUTNAME#1#1
+sumStatParam SIMDATANAME#SSFILENAME#0#1
+
+//-------------------------------------------------------------------------
+//REQUIRED ARGUMENTS IF RUNNING "MCMC NO LIKELIHOOD" BEYOND STANDARD
+
+//The number of sims to perform in the first iteration - these may be provided by the calName file
+numCaliSims 10000
+//A Parameter controlling the width of the proposal kernel in an MCMC chain. Floating number recommended 0.5
+rangeProp 0.5
+//Controls if the sampler proceeds if the chain did not not move after an MCMC chain has been restarted startupAttempts times.
+stopIfSartupFailed 1
+//The tolerance level to be used in an MCMC chain
+tolerance 0.05
+
+//-------------------------------------------------------------------------
+//OPTIONALS
+
+//Control if the distance to the observed data is added to the output file
+addDistanceToOutputfile 1
+//If several sims are performed within each iteration
+separateOutputFiles 0
+
+//----------------------If you are doing PLS-------------------------------
+//The name of the file where linear combinations of the summary statistics are defined.
+linearCombName PLS.txt
+//Controls if the statistics are transformed via Box-Cox when using linear transformations.
+doBoxCox 1
+//Controls if the linear combinations are standardized to calculate the distance in an MCMC chain.
+stdLinearCombForDist 0
+
+//----------------------If you are using your own calibration sims----------
+//The name of a calibration file
+calName KLDR_1_output_sampling1.txt

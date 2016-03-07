@@ -1,0 +1,6 @@
+/mnt/uni/PhD/ABCtoolbox/example/linux
+use_interf_settings
+exampleDNA-temp/exampleDNA-temp_0.arp
+0
+0
+end

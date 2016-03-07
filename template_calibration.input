@@ -1,0 +1,15 @@
+//Inputfile for the program ABCsampler calibration
+//-----------------------------------------------------------------------
+samplerType standard
+writeHeader 1
+
+estName dummy_model.est
+simInputName dummy_model.par
+obsName Scate_17micro_dummy_pop.obs
+outName dummy_pop_output
+nbSims dummy_sims
+simulationProgram simcoal2
+simDataName dummy_model-temp_0.arp
+sumStatProgram arlsumstat
+simParam SIMINPUTNAME#1#1
+sumStatParam SIMDATANAME#SSFILENAME#0#1

@@ -1,0 +1,22 @@
++ cp /nfs/12/osu0378/Scate_msat/obs/Scate_17micro_KLDR.obs /tmp/pbstmp.6098080
++ cp /nfs/12/osu0378/Scate_msat/arl/single_pop/arl_run.ars /tmp/pbstmp.6098080
++ cp /nfs/12/osu0378/Scate_msat/arl/single_pop/arl_run.txt /tmp/pbstmp.6098080
++ cp /nfs/12/osu0378/Scate_msat/arl/single_pop/ssdefs.txt /tmp/pbstmp.6098080
++ cp /nfs/12/osu0378/Scate_msat/arl/arlsumstat /tmp/pbstmp.6098080
++ cp /nfs/12/osu0378/Scate_msat/binaries/simcoal2 /tmp/pbstmp.6098080
++ cp /nfs/12/osu0378/Scate_msat/binaries/ABCsampler /tmp/pbstmp.6098080
++ mv /nfs/12/osu0378/Scate_msat/population_results/KLDR_Model1_2016-03-04-15-53/Model1_calibration.input /tmp/pbstmp.6098080
++ mv /nfs/12/osu0378/Scate_msat/population_results/KLDR_Model1_2016-03-04-15-53/Model1.par /tmp/pbstmp.6098080
++ mv /nfs/12/osu0378/Scate_msat/population_results/KLDR_Model1_2016-03-04-15-53/Model1.est /tmp/pbstmp.6098080
++ cd /tmp/pbstmp.6098080
++ chmod +x ABCsampler simcoal2 arlsumstat
++ echo './ABCsampler Model1_calibration.input'
++ ./ABCsampler Model1_calibration.input
++ rm simcoal2
++ rm arl_run.ars
++ rm arl_run.txt
++ rm ssdefs.txt
++ rm ABCsampler
++ rm arlsumstat
++ cp -R ABCsampler.log KLDR_output_sampling1.txt Model1_calibration.input Model1.est Model1.par Model1-temp Model1-temp.par randseed.txt Scate_17micro_KLDR.obs summary_stats_temp.txt /nfs/12/osu0378/Scate_msat/population_results/KLDR_Model1_2016-03-04-15-53
++ cd /nfs/12/osu0378/Scate_msat/population_results/KLDR_Model1_2016-03-04-15-53

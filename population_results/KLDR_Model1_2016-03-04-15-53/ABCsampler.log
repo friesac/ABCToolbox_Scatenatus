@@ -1,0 +1,39 @@
+ABCsampler Logfile
+*******************
+Reading inputfile 'Model1_calibration.input' ..... done!
+Random generator initialized with seed -594888
+Performing a Standard Simulation
+
+Filenames
+**********
+Prefix for output files: KLDR_output
+Name of file with prior definitions: Model1.est
+Reading priors and rules 'Model1.est' ... done:
+ -4 Priors
+ -0 Combined Priors
+ -0 Rules
+Names of the simulation input files:
+ -'Model1.par'
+Corresponding names of the temporal simulation input files:
+ -'Model1-temp.par'
+Using simulation program: 'simcoal2'
+
+Initialization
+**********
+create first input file and initialize ....
+The following file is read to get the summary statistics: 'summary_stats_temp.txt'
+Reading observed data file 'Scate_17micro_KLDR.obs' ... done, read 9 Data
+File 'Model1-temp_0.arp' is located here: 'Model1-temp/Model1-temp_0.arp':
+Using SumStat program: 'arlsumstat'
+  -number of observed Statistics: 9
+  -number of simulated Statistics: 25
+All Statistics are written in one single Outputfile.
+Number of simulations to perform: 100
+Number of repeats per parameter vector is set to: 1
+
+Simulations
+**********
+Loop is started.....
+0/100
+50/100
+End of Program!!
