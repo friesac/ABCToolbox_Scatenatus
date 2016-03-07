@@ -7,7 +7,7 @@ model=$3
 components=$4
 params=$5
 stats=$6
-
+Practice=$7
 #------ Just some formatting for the script -----
 bold=$(tput bold)
 normal=$(tput sgr0)
