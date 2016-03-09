@@ -1,0 +1,54 @@
+Log file path: Model1-temp/Model1-temp_0.res/Arlequin_log.txt
+Core Routine Directory: /tmp/pbstmp.6140155/
+Random number generator initialized with lidum=146689
+Reading project profile section...
+done !
+Opening next project...
+Model1-temp/Model1-temp_0.arp
+////////////////////////////////////////////////////////////////////
+RUN NUMBER 1 (09/03/16 at 13:26:40)
+////////////////////////////////////////////////////////////////////
+
+
+Reading Project: 
+Reading input file ...
+	Reading Samples section ...
+	Reading Sample 1 ... 
+	done ! (0 ms)
+
+	done reading Samples section! (0 ms)
+	Reading genetic structure ...
+	done reading genetic structure! (0 ms)
+done ! (0 ms)
+
+------------------------------------------------------------------------
+  Checking all selected options...
+		Building vectors of alleles...
+		done in 0 ms
+		Processing phenotypes into pseudo-haplotypes...
+		done in 0 ms
+		Building vectors of alleles...
+		done in 0 ms
+  done!
+  check selected settings...
+  done!
+
+Population 'Sample 1' : 
+	Computing standard diversity indices ...
+	done !
+done in 0 ms
+	Converting phenotypic to haplotypic data ...
+	done ! (0 ms)
+
+Skipping microsat repeat length detection
+		Beginning distance computations ...
+		done ! (0 ms)
+		Computing F statistics ...
+		done ! (0 ms)
+
+////////////////////////////////////////////////////////////////////
+END OF RUN NUMBER 1 (09/03/16 at 13:26:40))
+Total computing time for this run : 0h 0m 0s 0 ms
+////////////////////////////////////////////////////////////////////
+
+Successful run of Model1-temp/Model1-temp_0.arp

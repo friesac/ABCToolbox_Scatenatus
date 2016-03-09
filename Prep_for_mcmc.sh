@@ -18,6 +18,7 @@ echo "-------- We're preparing the calibration simulations of ${bold}${model}${n
 cd $path_to_results
 cp $HOME/Scate_msat/binaries/PLS_Summary.r .
 
+sed "s/dummy_pop/$population/g" -i PLS_Summary.r
 sed "s/dummy_model/$model/g" -i PLS_Summary.r
 sed "s/dummy_components/$components/g" -i PLS_Summary.r
 sed "s/dummy_params/$params/g" -i PLS_Summary.r

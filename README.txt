@@ -1,4 +1,5 @@
-README FOR ABC ANALYSIS - developed for the microsatellite data for Sistrurus STEPS:
+README FOR ABC ANALYSIS - developed for the microsatellite data for Sistrurus 
+
 1. Perform n simulations with parameters randomly drawn from their priors, and each time compute their associated set of summary statistics S.
 
 	- You're running a standard ABCsampler run that is setup in "template_calibration.input". 

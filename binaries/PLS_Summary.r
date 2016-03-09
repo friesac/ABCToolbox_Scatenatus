@@ -1,7 +1,7 @@
 #open File
 numComp<-dummy_components;	# Has to be less than the number of stats
 directory<-"";
-filename<-"dummy_model_output_sampling1.txt";	# Main simulation output from calibration run.
+filename<-"dummy_pop_output_sampling1.txt";	# Main simulation output from calibration run.
 
 #read that file
 a<-read.table(paste(directory, filename, sep=""), header=T, nrows=50000, skip=0);	# Make sure to pay attention to how many simulations are in your calibration run... if greater than 50000 than you need to change this number.

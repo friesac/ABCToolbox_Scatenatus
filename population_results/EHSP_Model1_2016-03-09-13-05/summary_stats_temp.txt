@@ -1,0 +1,2 @@
+K_1	Ksd_1	mean_K	sd_K	tot_K	H_1	Hsd_1	mean_H	sd_H	tot_H	GW_1	GWsd_1	mean_GW	sd_GW	tot_GW	NGW_1	NGWsd_1	mean_NGW	sd_NGW	R_1	Rsd_1	mean_R	sd_R	tot_R	FIS	
+1.11765	0.332106	1.11765	0	1.11765	0.015873	0.0501164	0.015873	0	0.015873	1	0	1	0	1	1	0	1	0	1	0	1	0	0.117647	0.48	
