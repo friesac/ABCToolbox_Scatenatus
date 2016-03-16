@@ -46,42 +46,10 @@ sed "s/dummy_max_read/$maxSimsToConsider/g" -i ${model}_estimation.input
 sed "s/dummy_param/$parameters/g" -i ${model}_estimation.input
 
 #copy files to run directory
-echo "cp $HOME/Scate_msat/obs/Scate_17micro_${population}.obs \$TMPDIR"
-echo "cp $HOME/Scate_msat/arl/${typeOfArlequinFileToUse}/arl_run.ars \$TMPDIR"
-echo "cp $HOME/Scate_msat/arl/${typeOfArlequinFileToUse}/arl_run.txt \$TMPDIR"
-echo "cp $HOME/Scate_msat/arl/${typeOfArlequinFileToUse}/ssdefs.txt \$TMPDIR"
-echo "cp $HOME/Scate_msat/arl/arlsumstat \$TMPDIR"
-echo "cp $HOME/Scate_msat/binaries/simcoal2 \$TMPDIR"
-echo "cp $HOME/Scate_msat/binaries/ABCsampler \$TMPDIR"
-echo "mv $outDir/${model}_calibration.input \$TMPDIR"
-echo "mv $outDir/${model}.par \$TMPDIR"
-echo "mv $outDir/${model}.est \$TMPDIR " 
-# Go on the node and launch ABCsampler1.0 if you are on OSC
-echo "cd \$TMPDIR"
-echo "chmod +x ABCsampler simcoal2 arlsumstat"
-echo ""
-echo "echo \"./ABCsampler ${model}_calibration.input\""
-echo "./ABCsampler ${model}_calibration.input"
-echo "rm simcoal2"
-echo "rm arl_run.ars"
-echo "rm arl_run.txt"
-echo "rm ssdefs.txt"
-echo "rm ABCsampler"
-echo "rm arlsumstat"
-# Copy results back
-echo "cp -R * $HOME/Scate_msat/population_results/${population}_${model}_${approx_run_date}"
-echo "cd $HOME/Scate_msat/population_results/${population}_${model}_${approx_run_date}"
-) > ${jobName}
+cp $HOME/Scate_msat/obs/Scate_17micro_${population}.obs .
+cp $HOME/Scate_msat/binaries/ABCestimator .
 
-chmod +x ${jobName}
-echo ""
-echo "Bash file ${bold}${jobName}${normal} created"
-echo ""
-echo ""
-qsub ./$jobName
+chmod +x ABCsampler
 
-
-
-
-
-
+##./ABCsampler ${model}_estimation.input
+rm ABCestimator
