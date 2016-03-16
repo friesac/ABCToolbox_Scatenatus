@@ -1,7 +1,7 @@
 //Number of population samples (demes)
 1 Samples to simulate
 //Population effective sizes (number of genes)
-49348
+37371
 //Sample sizes
 30
 //Growth rates : negative growth implies population expansion
@@ -15,4 +15,4 @@
 //Per chromosome: Number of contiguous linkage Block: a block is a set of contiguous loci
 1
 //per Block:data type, number of loci, per generation recombination and mutation rates and optional parameters
-MICROSAT 1 0 0.000137315 0.143768 0
+MICROSAT 1 0 0.000897199 0.20413 0

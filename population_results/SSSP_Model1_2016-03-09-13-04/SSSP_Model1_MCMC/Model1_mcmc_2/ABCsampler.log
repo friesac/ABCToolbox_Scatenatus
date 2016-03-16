@@ -1,7 +1,7 @@
 ABCsampler Logfile
 *******************
 Reading inputfile 'Model1_mcmc.input' ..... done!
-Random generator initialized with seed -781197
+Random generator initialized with seed -69766
 Performing an MCMC Simulation
 
 Filenames
@@ -29,7 +29,7 @@ Using SumStat program: 'arlsumstat'
   -number of simulated Statistics: 25
 The Distance is added to the output files.
 All Statistics are written in one single Outputfile.
-Number of simulations to perform: 100
+Number of simulations to perform: 5000
 Tolerance is set to: 0.05
 Rangeproportion is set to: 0.5
 Startup Length is set to: 100
@@ -41,19 +41,69 @@ Simulations
 An MCMC chain is launched ..... !
 Calibrate the system with already existing simulations ....
 Reading calibrationfile 'SSSP_output_sampling1.txt' ......done!
-Starting point is set randomly at simulation 259
+Starting point is set randomly at simulation 385
 Calibration done!
 Threshold is set to: 6.78404
-Distance of first Simulation: 11.0275
+Distance of first Simulation: 8.44239
 Startup of 100 is started ...Burnin over!
-Loop of 0 simulations is started ...
+Loop of 4900 simulations is started ...
+98/4900
+196/4900
+294/4900
+392/4900
+490/4900
+588/4900
+686/4900
+784/4900
+882/4900
+980/4900
+1078/4900
+1176/4900
+1274/4900
+1372/4900
+1470/4900
+1568/4900
+1666/4900
+1764/4900
+1862/4900
+1960/4900
+2058/4900
+2156/4900
+2254/4900
+2352/4900
+2450/4900
+2548/4900
+2646/4900
+2744/4900
+2842/4900
+2940/4900
+3038/4900
+3136/4900
+3234/4900
+3332/4900
+3430/4900
+3528/4900
+3626/4900
+3724/4900
+3822/4900
+3920/4900
+4018/4900
+4116/4900
+4214/4900
+4312/4900
+4410/4900
+4508/4900
+4606/4900
+4704/4900
+4802/4900
+4900/4900
  done!
 Number of bunrin attemps needed: 1
-Number of performed jumps: 100
-Number of simulations in chain: 0
-Number of accepted simulations: 0
+Number of performed jumps: 5000
+Number of simulations in chain: 4900
+Number of accepted simulations: 3141
 Number of simulations where h>1: 0
-Number of simulations where distance larger than threshold: 0
+Number of simulations where distance larger than threshold: 1759
 
 The following parameters were not used: stopIfSartupFailed, writeHeader!
 End of Program!!

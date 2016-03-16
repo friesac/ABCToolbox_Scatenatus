@@ -1,1 +1,1 @@
-Random number generator initialized with lidum=-439390
+Random number generator initialized with lidum=-1661059

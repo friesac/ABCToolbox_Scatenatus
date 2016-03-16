@@ -2,9 +2,9 @@
 
 # Specify the resources needed
 #PBS -A PAS0656
-#PBS -l walltime=00:01:00
+#PBS -l walltime=00:10:00
 #PBS -l nodes=1:ppn=1
-#PBS -N ABC_SSSP_Model1_2016-03-11-15-03
+#PBS -N ABC_SSSP_Model1_2016-03-11-15-41
 #PBS -l mem=4gb
 #PBS -m a
 

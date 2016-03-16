@@ -1,16 +1,16 @@
 //inputfile for the program ABCestimator
 estimationType standard
 //file with the simulations. Consists of first the parameters and then the stats. A header line is required!
-simName	KLDR_1_mcmc_output_sampling1.txt
+simName	Concatenated_dummy_pop_dummy_model_mcmc_output_sampling1.txt
 //file with obnserved statistics. A Header is required with names corresponding to the stats in the simfile!
-obsName	Scate_17micro_KLDR.obs
+obsName	Scate_17micro_dummy_pop.obs
 //columns containg parameters for which estimates will be produced
-params	3
+params dummy_param
 //number of simulations to estimate the GLM on
-numRetained	5000
-maxReadSims	100000
+numRetained	dummy_retain
+maxReadSims	dummy_max_read
 //the width of the diracpeaks, affecting the smoothing..
-diracPeakWidth 0.01
+diracPeakWidth 0.001
 //number of points at which to estimate posterior density
 posteriorDensityPoints 100
 //should the statistics be standardized? values: 1 / 0 (default) 
@@ -25,4 +25,4 @@ writeRetained 1
 obsPValue 1
 
 //Optionals
-
+//trueParamName

@@ -7,7 +7,7 @@ estName Model1.est
 simInputName Model1.par
 obsName Scate_17micro_SSSP.obs
 outName SSSP_mcmc_output
-nbSims 100
+nbSims 5000
 simulationProgram simcoal2
 simDataName Model1-temp_0.arp
 sumStatProgram arlsumstat

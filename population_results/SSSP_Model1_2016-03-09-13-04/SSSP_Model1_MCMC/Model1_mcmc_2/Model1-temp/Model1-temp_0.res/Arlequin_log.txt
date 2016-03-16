@@ -1,12 +1,12 @@
 Log file path: Model1-temp/Model1-temp_0.res/Arlequin_log.txt
-Core Routine Directory: /tmp/pbstmp.6153586[2]/
-Random number generator initialized with lidum=-1028912
+Core Routine Directory: /tmp/pbstmp.6153830[2]/
+Random number generator initialized with lidum=-956489
 Reading project profile section...
 done !
 Opening next project...
 Model1-temp/Model1-temp_0.arp
 ////////////////////////////////////////////////////////////////////
-RUN NUMBER 1 (11/03/16 at 15:04:29)
+RUN NUMBER 1 (11/03/16 at 15:47:46)
 ////////////////////////////////////////////////////////////////////
 
 
@@ -47,7 +47,7 @@ Skipping microsat repeat length detection
 		done ! (10 ms)
 
 ////////////////////////////////////////////////////////////////////
-END OF RUN NUMBER 1 (11/03/16 at 15:04:29))
+END OF RUN NUMBER 1 (11/03/16 at 15:47:46))
 Total computing time for this run : 0h 0m 0s 10 ms
 ////////////////////////////////////////////////////////////////////
 

@@ -124,5 +124,16 @@ echo "Bash file ${bold}${jobName}${normal} created"
 echo ""
 echo ""
 
+# Make a compiler script to concatenate the result files... Just go to the main script and run the .sh
+echo "Defining the compiler"
+echo ""
+cd $HOME/Scate_msat/${pathToResults}${population}_${model}_MCMC/
+(
+echo "head -n1 $HOME/Scate_msat/${pathToResults}${population}_${model}_MCMC/${model}_mcmc_1/*mcmc_output* > Concatenated_mcmc_output.txt"
+echo "for fol in $HOME/Scate_msat/${pathToResults}${population}_${model}_MCMC/${model}_mcmc_*"
+echo "do tail -n+2 \${fol}/*mcmc_output* >> Concatenated_mcmc_output.txt"
+echo "done"
+)> MCMC_compiler.sh
+
 qsub -t 1-${jobarrays} ${jobName}
 
