@@ -1,6 +1,0 @@
-/home/gibbslab/ABCtoolbox/single_pop/KLDR
-use_interf_settings
-KLDR_1-temp/KLDR_1-temp_0.arp
-0
-0
-end
