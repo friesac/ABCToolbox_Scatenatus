@@ -1,9 +1,9 @@
 //inputfile for the program ABCestimator
 estimationType standard
 //file with the simulations. Consists of first the parameters and then the stats. A header line is required!
-simName	Concatenated_dummy_pop_dummy_model_mcmc_output_sampling1.txt
+simName	Concatenated_mcmc_output.txt
 //file with obnserved statistics. A Header is required with names corresponding to the stats in the simfile!
-obsName	Scate_17micro_dummy_pop.obs
+obsName	Scate_17micro_dummy_pop_new.obs
 //columns containg parameters for which estimates will be produced
 params dummy_param
 //number of simulations to estimate the GLM on
@@ -19,7 +19,7 @@ stadardizeStats 0
 writeRetained 1
 
 //The fraction of closest simulations to retain for posterior estimation.
-//tolerance 0.01
+//tolerance dummy_tolerance
 
 //Controls whether (1) or not (0) p-values of the observed data sets are computed.
 obsPValue 1

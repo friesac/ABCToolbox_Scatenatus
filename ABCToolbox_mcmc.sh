@@ -17,10 +17,10 @@ walltime=$7		# The walltime for a qsub submission.
 nodes=1					# Total nodes that you'd use --- should not need more than 1 for simcoal.
 ppn=1					# Total processors to use on that node.
 memory=4gb 				# For ABCToolbox you probably don't need more than 4mb
-approx_run_date=$(date +%F-%k-%M) 	# Capture the date and time variables for naming directories.
+approx_run_date=$(date +%F-%s) 	# Capture the date and time variables for naming directories.
 typeOfArlequinFileToUse="single_pop" 	# [single_pop/pairwise_pop] to specify how the calculations are processed.
 messageCode="a" 			#"b"egin,"e"nd,"a"borted,"s"uspended,"n"one - example ="bae"
-jobarrays=2 				# How many iterations of that exact run do you want... i.e. this is relevant to the mcmc search/indicates multiple starting chains.
+jobarrays=10 				# How many iterations of that exact run do you want... i.e. this is relevant to the mcmc search/indicates multiple starting chains.
 
 #------ Just some formatting for the script output -----
 bold=$(tput bold)
@@ -49,8 +49,8 @@ echo "-----------------"
 echo ""
 
 # Make a directory to hold all of the MCMC results.
-mkdir $HOME/Scate_msat/${pathToResults}${population}_${model}_MCMC 2>/dev/null	# Youre creating a directory within the calibration directory to start placing output.
-cd $HOME/Scate_msat/${pathToResults}${population}_${model}_MCMC			# change into that new directory.
+mkdir $HOME/Scate_msat/${pathToResults}${population}_${model}_MCMC_${approx_run_date} 2>/dev/null	# Youre creating a directory within the calibration directory to start placing output.
+cd $HOME/Scate_msat/${pathToResults}${population}_${model}_MCMC_${approx_run_date}			# change into that new directory.
 echo ""
 echo "Results will be sent to ${bold}${PWD}${normal}"	# This better be the file you just created.
 echo ""
@@ -89,7 +89,7 @@ echo "#PBS -m ${messageCode}"
 echo ""
 echo "set -x"
 # Make sure the right files are in the newly created directory.
-echo "mkdir $HOME/Scate_msat/${pathToResults}${population}_${model}_MCMC/${model}_mcmc_PBS_ARRAYID 2>/dev/null"
+echo "mkdir $HOME/Scate_msat/${pathToResults}${population}_${model}_MCMC_${approx_run_date}/${model}_mcmc_PBS_ARRAYID 2>/dev/null"
 echo "cp $HOME/Scate_msat/obs/Scate_17micro_${population}.obs \$TMPDIR"
 echo "cp $HOME/Scate_msat/arl/${typeOfArlequinFileToUse}/arl_run.ars \$TMPDIR"
 echo "cp $HOME/Scate_msat/arl/${typeOfArlequinFileToUse}/arl_run.txt \$TMPDIR"
@@ -97,18 +97,19 @@ echo "cp $HOME/Scate_msat/arl/${typeOfArlequinFileToUse}/ssdefs.txt \$TMPDIR"
 echo "cp $HOME/Scate_msat/arl/arlsumstat \$TMPDIR"
 echo "cp $HOME/Scate_msat/binaries/simcoal2 \$TMPDIR"
 echo "cp $HOME/Scate_msat/binaries/ABCsampler \$TMPDIR"
-echo "cp $HOME/Scate_msat/${pathToResults}${population}_${model}_MCMC/${model}_mcmc.input \$TMPDIR"
-echo "cp $HOME/Scate_msat/${pathToResults}${population}_${model}_MCMC/${model}.par \$TMPDIR"
-echo "cp $HOME/Scate_msat/${pathToResults}${population}_${model}_MCMC/${model}.est \$TMPDIR"
+echo "cp $HOME/Scate_msat/${pathToResults}${population}_${model}_MCMC_${approx_run_date}/${model}_mcmc.input \$TMPDIR"
+echo "cp $HOME/Scate_msat/${pathToResults}${population}_${model}_MCMC_${approx_run_date}/${model}.par \$TMPDIR"
+echo "cp $HOME/Scate_msat/${pathToResults}${population}_${model}_MCMC_${approx_run_date}/${model}.est \$TMPDIR"
 echo "cp $HOME/Scate_msat/${pathToResults}${population}_output_sampling1.txt \$TMPDIR"
+echo "cp $HOME/Scate_msat/${pathToResults}PLS.txt \$TMPDIR"
 #echo "cp $HOME/Scate_msat/${pathToResults}Routput_${model}_output_sampling1.txt \$TMPDIR"
 echo "cd \$TMPDIR"
 
 echo "chmod +x ABCsampler simcoal2 arlsumstat"
 echo "./ABCsampler ${model}_mcmc.input addToSeed=PBS_ARRAYID"	# You're adding to the seed so that the random start point is different between the jobs on the array.
 echo ""
-echo "cp -R * $HOME/Scate_msat/${pathToResults}${population}_${model}_MCMC/${model}_mcmc_PBS_ARRAYID"
-echo "cd $HOME/Scate_msat/${pathToResults}${population}_${model}_MCMC/${model}_mcmc_PBS_ARRAYID"
+echo "cp -R * $HOME/Scate_msat/${pathToResults}${population}_${model}_MCMC_${approx_run_date}/${model}_mcmc_PBS_ARRAYID"
+echo "cd $HOME/Scate_msat/${pathToResults}${population}_${model}_MCMC_${approx_run_date}/${model}_mcmc_PBS_ARRAYID"
 echo "rm simcoal2"
 echo "rm ABCsampler"
 echo "rm arlsumstat"
@@ -127,13 +128,14 @@ echo ""
 # Make a compiler script to concatenate the result files... Just go to the main script and run the .sh
 echo "Defining the compiler"
 echo ""
-cd $HOME/Scate_msat/${pathToResults}${population}_${model}_MCMC/
+cd $HOME/Scate_msat/${pathToResults}${population}_${model}_MCMC_${approx_run_date}/
 (
-echo "head -n1 $HOME/Scate_msat/${pathToResults}${population}_${model}_MCMC/${model}_mcmc_1/*mcmc_output* > Concatenated_mcmc_output.txt"
-echo "for fol in $HOME/Scate_msat/${pathToResults}${population}_${model}_MCMC/${model}_mcmc_*"
+echo "head -n1 $HOME/Scate_msat/${pathToResults}${population}_${model}_MCMC_${approx_run_date}/${model}_mcmc_1/*mcmc_output* > Concatenated_mcmc_output.txt"
+echo "for fol in $HOME/Scate_msat/${pathToResults}${population}_${model}_MCMC_${approx_run_date}/${model}_mcmc_*"
 echo "do tail -n+2 \${fol}/*mcmc_output* >> Concatenated_mcmc_output.txt"
 echo "done"
 )> MCMC_compiler.sh
+chmod +x MCMC_compiler.sh
 
 qsub -t 1-${jobarrays} ${jobName}
 

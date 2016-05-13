@@ -1,13 +1,13 @@
 #!/bin/bash
 
-set -x
+# Call it this way: ./Prep_for_mcmc.sh [PATH] [population] [model] [components] [params column e.g. 2:5] [stats columns 10:14] 
+
 path_to_results=$1
 population=$2
 model=$3
 components=$4
 params=$5
 stats=$6
-Practice=$7
 #------ Just some formatting for the script -----
 bold=$(tput bold)
 normal=$(tput sgr0)

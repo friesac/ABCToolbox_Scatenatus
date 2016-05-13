@@ -10,7 +10,7 @@ population=$1
 model=$2
 sampleSize=$3
 simulations=$4
-approx_run_date=$(date +%F-%k-%M) # Date variable for naming directories.
+approx_run_date=$(date +%F-%s) # Date variable for naming directories.
 typeOfArlequinFileToUse="single_pop" # [single_pop/pairwise_pop]
 
 #------ Specify the parameters for the OSC -----
@@ -52,7 +52,7 @@ sed "s/dummy_sims/$simulations/g" -i ${model}_calibration.input
 
 # Replace the sample size for the population in the par file.
 echo "... updating the par file with correct sample size"
-echo "" 
+echo ""
 cp $HOME/Scate_msat/models/est/${model}.est .
 cp $HOME/Scate_msat/models/par/${model}.par .
 sed "s/dummy_pop_size/$sampleSize/g" -i ${model}.par

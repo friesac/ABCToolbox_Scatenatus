@@ -18,7 +18,7 @@ sumStatParam SIMDATANAME#SSFILENAME#0#1
 //REQUIRED ARGUMENTS IF RUNNING "MCMC NO LIKELIHOOD" BEYOND STANDARD
 
 //The number of sims to perform in the first iteration - these may be provided by the calName file
-numCaliSims 20000
+numCaliSims 15000
 //A Parameter controlling the width of the proposal kernel in an MCMC chain. Floating number recommended 0.5
 rangeProp 0.5
 //Controls if the sampler proceeds if the chain did not not move after an MCMC chain has been restarted startupAttempts times.
@@ -36,9 +36,9 @@ separateOutputFiles 0
 
 //----------------------If you are doing PLS-------------------------------
 //The name of the file where linear combinations of the summary statistics are defined.
-//linearCombName PLS.txt
+linearCombName PLS.txt
 //Controls if the statistics are transformed via Box-Cox when using linear transformations.
-//doBoxCox 1
+doBoxCox 1
 //Controls if the linear combinations are standardized to calculate the distance in an MCMC chain.
 stdLinearCombForDist 0
 
